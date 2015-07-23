@@ -4,22 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-GNews-AFNetworkActivityLogger.xcscheme</key>
+		<key>AFNetworkActivityLogger.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-GNews-AFNetworking.xcscheme</key>
+		<key>AFNetworking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-GNews-MBProgressHUD.xcscheme</key>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-GNews-MediaRSSParser.xcscheme</key>
+		<key>MediaRSSParser.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -29,30 +29,40 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UIImageView-Letters.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6B77972D92E6196C71739BCF</key>
+		<key>16B90CE5C87CCC0F8B1807DA6FED69E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8A1F802E9CE1ABD44EE56562</key>
+		<key>21E1C8304D7687ED230684C4D4E1B2A0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>99552E7B6712DDC68B58BDC6</key>
+		<key>751D3E269D82714B6B0EBF0B60553E38</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A783A52CFE4F662BEF361CFA</key>
+		<key>9BDABE1D3A589F765D39DDA17BCF7243</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD3A5272A2EAA8275AC6789E</key>
+		<key>BAC219F8DA2ED4F597FC2D35EE36C2BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F851056A8773C3D8247D80C06B1FDB4E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

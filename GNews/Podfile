@@ -6,6 +6,8 @@ pod 'AFNetworkActivityLogger', '~> 2.0'
 pod 'AFNetworking', '2.2.1'
 pod 'MBProgressHUD', '~> 0.9.1'
 pod 'MediaRSSParser', '~> 1.0'
+pod 'IJReachability', :git => 'https://github.com/Isuru-Nanayakkara/IJReachability.git'
+use_frameworks!
 end
 
 target 'GNewsTests' do

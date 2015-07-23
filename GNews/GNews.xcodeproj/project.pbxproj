@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		22EF35061B605C9E0074C46D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EF35051B605C9E0074C46D /* AppDelegate.swift */; };
-		22EF35081B605C9E0074C46D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EF35071B605C9E0074C46D /* ViewController.swift */; };
 		22EF350B1B605C9E0074C46D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22EF35091B605C9E0074C46D /* Main.storyboard */; };
 		22EF350E1B605C9E0074C46D /* GNews.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22EF350C1B605C9E0074C46D /* GNews.xcdatamodeld */; };
 		22EF35101B605C9E0074C46D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22EF350F1B605C9E0074C46D /* Assets.xcassets */; };
@@ -20,7 +19,9 @@
 		22EF353B1B6077F80074C46D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EF353A1B6077F80074C46D /* MobileCoreServices.framework */; };
 		22EF353D1B6078200074C46D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EF353C1B6078200074C46D /* Foundation.framework */; };
 		22EF353F1B6078340074C46D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22EF353E1B6078340074C46D /* CoreGraphics.framework */; };
-		ACD6BE7F4A607C7EEA4CF060 /* libPods-GNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 815AAFA48BD7962D2C0B90E1 /* libPods-GNews.a */; };
+		22EF35481B608D420074C46D /* GNewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EF35471B608D420074C46D /* GNewsFeedViewController.swift */; };
+		22EF354B1B6093F20074C46D /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EF354A1B6093F20074C46D /* NetworkCall.swift */; };
+		6B73436182A37415F1485F64 /* Pods_GNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F779E9ACA79BA05A0958DC /* Pods_GNews.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,6 @@
 /* Begin PBXFileReference section */
 		22EF35021B605C9E0074C46D /* GNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22EF35051B605C9E0074C46D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22EF35071B605C9E0074C46D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22EF350A1B605C9E0074C46D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22EF350D1B605C9E0074C46D /* GNews.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GNews.xcdatamodel; sourceTree = "<group>"; };
 		22EF350F1B605C9E0074C46D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,8 +60,11 @@
 		22EF353A1B6077F80074C46D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		22EF353C1B6078200074C46D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		22EF353E1B6078340074C46D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		815AAFA48BD7962D2C0B90E1 /* libPods-GNews.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GNews.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22EF35401B607E620074C46D /* GNews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GNews-Bridging-Header.h"; sourceTree = "<group>"; };
+		22EF35471B608D420074C46D /* GNewsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GNewsFeedViewController.swift; sourceTree = "<group>"; };
+		22EF354A1B6093F20074C46D /* NetworkCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
 		982C776941310955A839DF60 /* Pods-GNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-GNews/Pods-GNews.release.xcconfig"; sourceTree = "<group>"; };
+		A4F779E9ACA79BA05A0958DC /* Pods_GNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5EA4720E6215E686EB2A531 /* Pods-GNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GNews/Pods-GNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,7 +78,7 @@
 				22EF353B1B6077F80074C46D /* MobileCoreServices.framework in Frameworks */,
 				22EF35391B6077E60074C46D /* Security.framework in Frameworks */,
 				22EF35371B6077D60074C46D /* SystemConfiguration.framework in Frameworks */,
-				ACD6BE7F4A607C7EEA4CF060 /* libPods-GNews.a in Frameworks */,
+				6B73436182A37415F1485F64 /* Pods_GNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,13 +124,16 @@
 		22EF35041B605C9E0074C46D /* GNews */ = {
 			isa = PBXGroup;
 			children = (
+				22EF35491B6093440074C46D /* API Client */,
+				22EF35461B608CE40074C46D /* Views */,
+				22EF35451B608CC00074C46D /* Controllers */,
 				22EF35051B605C9E0074C46D /* AppDelegate.swift */,
-				22EF35071B605C9E0074C46D /* ViewController.swift */,
 				22EF35091B605C9E0074C46D /* Main.storyboard */,
 				22EF350F1B605C9E0074C46D /* Assets.xcassets */,
 				22EF35111B605C9E0074C46D /* LaunchScreen.storyboard */,
 				22EF35141B605C9E0074C46D /* Info.plist */,
 				22EF350C1B605C9E0074C46D /* GNews.xcdatamodeld */,
+				22EF35401B607E620074C46D /* GNews-Bridging-Header.h */,
 			);
 			path = GNews;
 			sourceTree = "<group>";
@@ -150,6 +156,29 @@
 			path = GNewsUITests;
 			sourceTree = "<group>";
 		};
+		22EF35451B608CC00074C46D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22EF35471B608D420074C46D /* GNewsFeedViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		22EF35461B608CE40074C46D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		22EF35491B6093440074C46D /* API Client */ = {
+			isa = PBXGroup;
+			children = (
+				22EF354A1B6093F20074C46D /* NetworkCall.swift */,
+			);
+			name = "API Client";
+			sourceTree = "<group>";
+		};
 		452219377BE75B656F9D411A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,7 +196,7 @@
 				22EF353A1B6077F80074C46D /* MobileCoreServices.framework */,
 				22EF35381B6077E60074C46D /* Security.framework */,
 				22EF35361B6077D60074C46D /* SystemConfiguration.framework */,
-				815AAFA48BD7962D2C0B90E1 /* libPods-GNews.a */,
+				A4F779E9ACA79BA05A0958DC /* Pods_GNews.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,6 +213,7 @@
 				22EF34FF1B605C9E0074C46D /* Frameworks */,
 				22EF35001B605C9E0074C46D /* Resources */,
 				BB8B9FC011763B68C68AD79F /* Copy Pods Resources */,
+				F8C115F1A3E2B967585AF8DF /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,6 +266,7 @@
 		22EF34FA1B605C9E0074C46D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Beyond 2021";
 				TargetAttributes = {
@@ -330,6 +361,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GNews/Pods-GNews-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F8C115F1A3E2B967585AF8DF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GNews/Pods-GNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -337,8 +383,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22EF35081B605C9E0074C46D /* ViewController.swift in Sources */,
+				22EF35481B608D420074C46D /* GNewsFeedViewController.swift in Sources */,
 				22EF350E1B605C9E0074C46D /* GNews.xcdatamodeld in Sources */,
+				22EF354B1B6093F20074C46D /* NetworkCall.swift in Sources */,
 				22EF35061B605C9E0074C46D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,10 +527,13 @@
 			baseConfigurationReference = A5EA4720E6215E686EB2A531 /* Pods-GNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beyond2021.GNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GNews/GNews-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -492,10 +542,12 @@
 			baseConfigurationReference = 982C776941310955A839DF60 /* Pods-GNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = GNews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beyond2021.GNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GNews/GNews-Bridging-Header.h";
 			};
 			name = Release;
 		};

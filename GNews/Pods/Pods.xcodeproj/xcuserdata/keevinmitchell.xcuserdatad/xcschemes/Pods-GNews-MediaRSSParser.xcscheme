@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BD3A5272A2EAA8275AC6789E"
-               BuildableName = "libPods-GNews-MediaRSSParser.a"
+               BlueprintIdentifier = "ACAD153AEA2E83309D9C8D94"
+               BuildableName = "MediaRSSParser.framework"
                BlueprintName = "Pods-GNews-MediaRSSParser"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

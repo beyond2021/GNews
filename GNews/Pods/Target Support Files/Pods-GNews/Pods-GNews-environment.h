@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 2
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
+// IJReachability
+#define COCOAPODS_POD_AVAILABLE_IJReachability
+#define COCOAPODS_VERSION_MAJOR_IJReachability 0
+#define COCOAPODS_VERSION_MINOR_IJReachability 1
+#define COCOAPODS_VERSION_PATCH_IJReachability 0
+
 // MBProgressHUD
 #define COCOAPODS_POD_AVAILABLE_MBProgressHUD
 #define COCOAPODS_VERSION_MAJOR_MBProgressHUD 0

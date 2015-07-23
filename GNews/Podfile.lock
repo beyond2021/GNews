@@ -21,6 +21,7 @@ PODS:
   - AFNetworking/UIKit (2.2.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - IJReachability (0.1.0)
   - MBProgressHUD (0.9.1)
   - MediaRSSParser (1.0.1):
     - AFNetworking (~> 2.0)
@@ -28,12 +29,23 @@ PODS:
 DEPENDENCIES:
   - AFNetworkActivityLogger (~> 2.0)
   - AFNetworking (= 2.2.1)
+  - IJReachability (from `https://github.com/Isuru-Nanayakkara/IJReachability.git`)
   - MBProgressHUD (~> 0.9.1)
   - MediaRSSParser (~> 1.0)
+
+EXTERNAL SOURCES:
+  IJReachability:
+    :git: https://github.com/Isuru-Nanayakkara/IJReachability.git
+
+CHECKOUT OPTIONS:
+  IJReachability:
+    :commit: da69c8f4bed9f82203bb49180fb36091b4cd0d28
+    :git: https://github.com/Isuru-Nanayakkara/IJReachability.git
 
 SPEC CHECKSUMS:
   AFNetworkActivityLogger: 121486778117d53b3ab1c61d264b88081d0c3eee
   AFNetworking: 59a0b8e9ecd4e194d64b4967232cd2cc83490113
+  IJReachability: 3eff33caca50869df09b257bcf712031a56a8575
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MediaRSSParser: 5d73c6a4278448b7f56fba73c97b5ffaf4ead72c
 

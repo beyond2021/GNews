@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-GNews-AFNetworkActivityLogger.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GNews-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GNews-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GNews-MediaRSSParser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GNews.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>6B77972D92E6196C71739BCF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A1F802E9CE1ABD44EE56562</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>99552E7B6712DDC68B58BDC6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A783A52CFE4F662BEF361CFA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD3A5272A2EAA8275AC6789E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

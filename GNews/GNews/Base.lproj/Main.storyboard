@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="15A204h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0zh-io-aEc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="15A226f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0zh-io-aEc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -59,7 +59,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="110" y="20" width="274" height="21"/>
+                                                        <rect key="frame" x="110" y="20" width="110" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAb-Rb-Wck">
@@ -68,17 +68,20 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="110" y="44" width="110" height="18"/>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstItem="CAb-Rb-Wck" firstAttribute="leading" secondItem="ZH5-cJ-ZF4" secondAttribute="trailing" constant="20" id="2EZ-lu-9kA"/>
-                                                <constraint firstAttribute="trailing" secondItem="Hzj-CR-lUO" secondAttribute="trailing" constant="20" id="3t5-ZL-nUl"/>
                                                 <constraint firstItem="CAb-Rb-Wck" firstAttribute="top" secondItem="Hzj-CR-lUO" secondAttribute="bottom" constant="3" id="9Rc-V5-hx5"/>
-                                                <constraint firstAttribute="trailing" secondItem="CAb-Rb-Wck" secondAttribute="trailing" constant="16" id="H35-Ky-UaB"/>
                                                 <constraint firstItem="Hzj-CR-lUO" firstAttribute="leading" secondItem="ZH5-cJ-ZF4" secondAttribute="trailing" constant="20" id="Hdd-6t-ryq"/>
                                                 <constraint firstItem="ZH5-cJ-ZF4" firstAttribute="top" secondItem="V7P-Gd-KhH" secondAttribute="top" constant="10" id="ap5-7x-euS"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hzj-CR-lUO" secondAttribute="trailing" constant="20" id="fXR-du-w2Q"/>
                                                 <constraint firstItem="ZH5-cJ-ZF4" firstAttribute="leading" secondItem="V7P-Gd-KhH" secondAttribute="leading" constant="10" id="h1l-NL-vys"/>
+                                                <constraint firstAttribute="trailing" secondItem="CAb-Rb-Wck" secondAttribute="trailing" constant="20" id="ik3-Jm-SHd"/>
                                                 <constraint firstItem="Hzj-CR-lUO" firstAttribute="top" secondItem="V7P-Gd-KhH" secondAttribute="top" constant="20" id="mmq-eA-Uff"/>
                                                 <constraint firstAttribute="bottom" secondItem="CAb-Rb-Wck" secondAttribute="bottom" constant="20" id="rTy-wd-yEy"/>
                                             </constraints>
@@ -89,15 +92,15 @@
                                                     <exclude reference="CAb-Rb-Wck"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="ap5-7x-euS"/>
-                                                    <exclude reference="h1l-NL-vys"/>
-                                                    <exclude reference="3t5-ZL-nUl"/>
-                                                    <exclude reference="Hdd-6t-ryq"/>
-                                                    <exclude reference="mmq-eA-Uff"/>
                                                     <exclude reference="2EZ-lu-9kA"/>
                                                     <exclude reference="9Rc-V5-hx5"/>
-                                                    <exclude reference="H35-Ky-UaB"/>
+                                                    <exclude reference="ik3-Jm-SHd"/>
                                                     <exclude reference="rTy-wd-yEy"/>
+                                                    <exclude reference="Hdd-6t-ryq"/>
+                                                    <exclude reference="fXR-du-w2Q"/>
+                                                    <exclude reference="mmq-eA-Uff"/>
+                                                    <exclude reference="ap5-7x-euS"/>
+                                                    <exclude reference="h1l-NL-vys"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -107,22 +110,23 @@
                                                     <include reference="CAb-Rb-Wck"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="ap5-7x-euS"/>
-                                                    <include reference="h1l-NL-vys"/>
-                                                    <include reference="3t5-ZL-nUl"/>
-                                                    <include reference="Hdd-6t-ryq"/>
-                                                    <include reference="mmq-eA-Uff"/>
                                                     <include reference="2EZ-lu-9kA"/>
                                                     <include reference="9Rc-V5-hx5"/>
-                                                    <include reference="H35-Ky-UaB"/>
+                                                    <include reference="ik3-Jm-SHd"/>
                                                     <include reference="rTy-wd-yEy"/>
+                                                    <include reference="Hdd-6t-ryq"/>
+                                                    <include reference="fXR-du-w2Q"/>
+                                                    <include reference="mmq-eA-Uff"/>
+                                                    <include reference="ap5-7x-euS"/>
+                                                    <include reference="h1l-NL-vys"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <outlet property="thumbNail" destination="ZH5-cJ-ZF4" id="G3O-b7-9fM"/>
-                                            <outlet property="titleLabel" destination="Hzj-CR-lUO" id="z8B-dO-Kne"/>
+                                            <outlet property="subtitleLabel" destination="CAb-Rb-Wck" id="NDz-0z-4zT"/>
+                                            <outlet property="thumbNail" destination="ZH5-cJ-ZF4" id="Phl-Y7-wni"/>
+                                            <outlet property="titleLabel" destination="Hzj-CR-lUO" id="Lxa-E7-WGf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -166,13 +170,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="newsTableView" destination="22Z-4c-bPk" id="Zt5-ny-MKh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2167.5" y="431.25"/>
+            <point key="canvasLocation" x="2130" y="415.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="krQ-df-hgJ">

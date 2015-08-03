@@ -1,7 +1,7 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, ‘8.0’
 
-target 'GNews' do
+target 'GNews’ do
 pod 'AFNetworkActivityLogger', '~> 2.0'
 pod 'AFNetworking', ‘2.5.4’
 pod 'MBProgressHUD', '~> 0.9.1'
@@ -11,9 +11,21 @@ end
 
 target 'GNewsTests' do
 
+pod 'AFNetworkActivityLogger', '~> 2.0'
+pod 'AFNetworking', ‘2.5.4’
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'MediaRSSParser', '~> 1.0'
+pod "UIImageView-Letters"
+
 end
 
 target 'GNewsUITests' do
+
+pod 'AFNetworkActivityLogger', '~> 2.0'
+pod 'AFNetworking', ‘2.5.4’
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'MediaRSSParser', '~> 1.0'
+pod "UIImageView-Letters"
 
 end
 

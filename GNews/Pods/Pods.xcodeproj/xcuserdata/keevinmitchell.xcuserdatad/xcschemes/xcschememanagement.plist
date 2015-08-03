@@ -29,6 +29,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-GNewsTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-GNewsUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UIImageView-Letters.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,17 +47,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>16B90CE5C87CCC0F8B1807DA6FED69E6</key>
+		<key>0661051C731E5045C81E5F88D6BB3473</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>21E1C8304D7687ED230684C4D4E1B2A0</key>
+		<key>48F6C6424CFBD3671BD5FF04ED960D6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>751D3E269D82714B6B0EBF0B60553E38</key>
+		<key>4C6F580B7D99156665E52186C0C35EB8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7286F4BE4119F23EE0666FE80667E79A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,7 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F851056A8773C3D8247D80C06B1FDB4E</key>
+		<key>D7ED23EB328B292B535E244C2A10F77C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E5F7B7A5D7629643F7073889FE5A2231</key>
 		<dict>
 			<key>primary</key>
 			<true/>

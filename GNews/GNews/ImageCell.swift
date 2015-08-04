@@ -6,10 +6,10 @@
 //  Copyright © 2015 Razeware, LLC. All rights reserved.
 //
 
-//import UIKit
-//
-//class ImageCell: NewsCell {
-//    
-//    @IBOutlet var customImageView: UIImageView!
-//
-//}
+import UIKit
+
+class ImageCell: NewsCell {
+    
+    @IBOutlet var customImageView: UIImageView!
+
+}

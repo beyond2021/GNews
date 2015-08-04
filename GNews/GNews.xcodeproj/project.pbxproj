@@ -12,6 +12,8 @@
 		22A04B2B1B61773D00EDCE86 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A04B2A1B61773D00EDCE86 /* NewsCell.swift */; };
 		22ADC5911B6EEDCF0085B9F5 /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A04B231B61739800EDCE86 /* NewsFeedViewController.swift */; };
 		22ADC5921B6EF2630085B9F5 /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A04B2A1B61773D00EDCE86 /* NewsCell.swift */; };
+		22ADC5941B6EFE0D0085B9F5 /* DownloadAndParse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ADC5931B6EFE0D0085B9F5 /* DownloadAndParse.swift */; };
+		22ADC5961B71316F0085B9F5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ADC5951B71316F0085B9F5 /* DetailViewController.swift */; };
 		22B7B1B41B65912E00A26748 /* TestInputData.xml in Resources */ = {isa = PBXBuildFile; fileRef = 22B7B1B31B65912E00A26748 /* TestInputData.xml */; };
 		22C0053C1B683896006E43F7 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C0053B1B683896006E43F7 /* Converter.swift */; };
 		22C0053D1B683896006E43F7 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C0053B1B683896006E43F7 /* Converter.swift */; };
@@ -58,6 +60,8 @@
 		22A04B231B61739800EDCE86 /* NewsFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		22A04B261B61747E00EDCE86 /* GNews-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GNews-Bridging-Header.h"; sourceTree = "<group>"; };
 		22A04B2A1B61773D00EDCE86 /* NewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		22ADC5931B6EFE0D0085B9F5 /* DownloadAndParse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadAndParse.swift; sourceTree = "<group>"; };
+		22ADC5951B71316F0085B9F5 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		22B7B1B31B65912E00A26748 /* TestInputData.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = TestInputData.xml; sourceTree = "<group>"; };
 		22C0053B1B683896006E43F7 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		22C005401B6D4259006E43F7 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				22A04B231B61739800EDCE86 /* NewsFeedViewController.swift */,
+				22ADC5951B71316F0085B9F5 /* DetailViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				22B7B1B31B65912E00A26748 /* TestInputData.xml */,
 				22EF351D1B605C9F0074C46D /* GNewsTests.swift */,
 				22EF351F1B605C9F0074C46D /* Info.plist */,
+				22ADC5931B6EFE0D0085B9F5 /* DownloadAndParse.swift */,
 			);
 			path = GNewsTests;
 			sourceTree = "<group>";
@@ -495,6 +501,7 @@
 				22EF35061B605C9E0074C46D /* AppDelegate.swift in Sources */,
 				22A04B2B1B61773D00EDCE86 /* NewsCell.swift in Sources */,
 				22A04B241B61739800EDCE86 /* NewsFeedViewController.swift in Sources */,
+				22ADC5961B71316F0085B9F5 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22C005421B6D425B006E43F7 /* ImageCell.swift in Sources */,
+				22ADC5941B6EFE0D0085B9F5 /* DownloadAndParse.swift in Sources */,
 				22C0053D1B683896006E43F7 /* Converter.swift in Sources */,
 				22EF351E1B605C9F0074C46D /* GNewsTests.swift in Sources */,
 				22ADC5911B6EEDCF0085B9F5 /* NewsFeedViewController.swift in Sources */,

@@ -17,7 +17,6 @@ class GNewsTests: XCTestCase{
     
     override func setUp() {
         super.setUp()
-       
         
             }
     
@@ -40,9 +39,24 @@ class GNewsTests: XCTestCase{
         
     }
     
+    func testThatTheParserClassExists(){
+        let parser = RSSParser()
+        XCTAssertNotNil(parser, "Parser object should not be nil")
+        
+        
+    }
     
-    
-    
+    func testThatTheParameterIsCorrect(){
+        let paramter = ["q": "boost:popular"]
+        XCTAssertEqual(paramter, ["q": "boost:popular"], "The parameter is\(paramter) ")
+        
+    }
+   
+    func testThatTheGoogleURLIsCorrect(){
+        let googleURL = "http://news.google.com/?output=rss"
+        XCTAssertEqual(googleURL, "http://news.google.com/?output=rss", "The Google URL  is\(googleURL) ")
+        
+    }
     
     
     

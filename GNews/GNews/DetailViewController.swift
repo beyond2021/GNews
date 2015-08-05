@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailViewController: UIViewController {
 
@@ -16,57 +17,59 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    var item: RSSItem? = nil
+  //  var item: RSSItem? = nil
+    var item: NSManagedObject? = nil
     
     @IBOutlet weak var subtitleLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setImageViewImage()
+       // setImageViewImage()
+      
         setTitleLabelText()
         setSubtitleLabelText()
     }
     
-    func setImageViewImage() {
-        
-        if imageView == nil {
-            return
-        }
-        
-        let url = firstMediaContentImageURL()
-        if url == nil {
-            return
-        }
-        
-        let request = NSURLRequest(URL: url!)
-        
-        self.activityIndicator.startAnimating()
-        
-        imageView!.setImageWithURLRequest(request, placeholderImage: nil,
-            
-            success: { (request, response, image) -> Void in
-                self.activityIndicator.stopAnimating()
-                self.imageView!.image = image
-                
-            }, failure: { (url, response, error) -> Void in
-                self.activityIndicator.stopAnimating()
-                self.imageView!.image = nil
-        });
-    }
-    
-    func firstMediaContentImageURL() -> NSURL? {
-        for mediaContent in item?.mediaContents as! [RSSMediaContent] {
-            if mediaContent.url != nil {
-                return mediaContent.url
-            }
-        }
-        return nil
-    }
-    
+//    func setImageViewImage() {
+//        
+//        if imageView == nil {
+//            return
+//        }
+//        
+//        let url = firstMediaContentImageURL()
+//        if url == nil {
+//            return
+//        }
+//        
+//        let request = NSURLRequest(URL: url!)
+//        
+//        self.activityIndicator.startAnimating()
+//        
+//        imageView!.setImageWithURLRequest(request, placeholderImage: nil,
+//            
+//            success: { (request, response, image) -> Void in
+//                self.activityIndicator.stopAnimating()
+//                self.imageView!.image = image
+//                
+//            }, failure: { (url, response, error) -> Void in
+//                self.activityIndicator.stopAnimating()
+//                self.imageView!.image = nil
+//        });
+//    }
+////    
+//    func firstMediaContentImageURL() -> NSURL? {
+//        for mediaContent in item?.mediaContents as! [RSSMediaContent] {
+//            if mediaContent.url != nil {
+//                return mediaContent.url
+//            }
+//        }
+//        return nil
+//    }
+//    
     func setTitleLabelText() {
         
-        var title = item?.title
+        var title = item?.valueForKey("title") as? String
         
-        if title == nil || (title!).characters.count == 0 {
+        if title == nil || title!.characters.count == 0 {
             title = NSLocalizedString("[No Title]", comment: "")
         }
         
@@ -75,11 +78,23 @@ class DetailViewController: UIViewController {
     
     func setSubtitleLabelText() {
         
-        if let mediaText = item?.itemDescription {
+//        if let mediaText = item?.itemDescription {
+//            subtitleLabel.text = mediaText
+        
+        if let mediaText = item?.valueForKey("itemDescription") as? String {
             subtitleLabel.text = mediaText
+   
             
-        } else if let mediaDescription = item?.mediaDescription {
+            
+            
+        }
+        
+//        else if let mediaDescription = item?.mediaDescription {
+//            subtitleLabel.text = mediaDescription
+        else if let mediaDescription = item?.valueForKey("mediaDescription") as? String {
             subtitleLabel.text = mediaDescription
+            
+            
             
         } else {
             subtitleLabel.text = ""

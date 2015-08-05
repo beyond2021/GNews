@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreData // For persistance
+
 
 class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
@@ -24,7 +26,12 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var refreshAction: UIBarButtonItem!
     
     //MARK: Our simple model array or items
-    var items:[RSSItem] = []
+//    var items:[RSSItem] = []
+    
+    //Persistence
+    var items = [NSManagedObject]()
+    
+    
     
     //Network Call
     func parseForQuery() {
@@ -37,9 +44,10 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
                 //  print("The channel is : \(channel)")
                 
                self.convertItemPropertiesToPlainText(channel.items as! [RSSItem])
-              self.items = (channel.items as! [RSSItem])
+             // self.items = (channel.items as! [RSSItem])
+                let returnedItems = (channel.items as! [RSSItem])
+                self.persistData(returnedItems)
                 
-              
                 
                 self.hideProgressHUD()
                self.reloadTableViewContent()
@@ -92,7 +100,49 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
 
-    
+    func persistData(objectsTosave:[RSSItem]){
+        
+        let articles = objectsTosave
+        
+        
+        for article in articles {
+            //1
+            let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+            
+            let managedContext = appDelegate.managedObjectContext
+            
+            //2
+            let entity =  NSEntityDescription.entityForName("NewsArticle",
+                inManagedObjectContext:
+                managedContext)
+            
+            let news = NSManagedObject(entity: entity!,
+                insertIntoManagedObjectContext:managedContext)
+            
+            //3
+            news.setValue(article.title, forKey: "title")
+            news.setValue(article.itemDescription, forKey: "itemDescription")
+           // news.setValue(article.mediaThumbnails, forKey: "thumbnailImage")
+            
+            //4
+                        if managedContext.hasChanges {
+                do {
+                    try managedContext.save()
+                } catch {
+                    // Replace this implementation with code to handle the error appropriately.
+                    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                    let nserror = error as NSError
+                    NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                    abort()
+                }
+            }
+                        //5
+            self.items.append(news)
+            
+        }
+        
+    }
     
     
     
@@ -164,15 +214,8 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func hasImageAtIndexPath(indexPath:NSIndexPath) -> Bool {
-        let item = items[indexPath.row]
+       // let item = items[indexPath.row]
         
-        let mediaThumbnailArray = item.mediaThumbnails as! [RSSMediaThumbnail]
-                
-        for mediaThumbnail in mediaThumbnailArray {
-            if mediaThumbnail.url != nil {
-                return true
-            }
-        }
         
         return false
     }
@@ -186,28 +229,7 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func setImageForCell(cell:ImageCell, indexPath:NSIndexPath) {
-        let item: RSSItem = items[indexPath.row]
-        
-        // mediaThumbnails are generally ordered by size,
-        // so get the second mediaThumbnail, which is a
-        // "medium" sized image
-        
-        var mediaThumbnail: RSSMediaThumbnail?
-        
-        if item.mediaThumbnails.count >= 2 {
-            mediaThumbnail = item.mediaThumbnails[1] as? RSSMediaThumbnail
-            // mediaThumbnail = item.imagesFromMediaText()[1] as? RSSMediaThumbnail
-            
-        } else {
-            mediaThumbnail = (item.mediaThumbnails as NSArray).firstObject as? RSSMediaThumbnail
-        }
-        
-        cell.customImageView.image = nil
-        
-        if let url = mediaThumbnail?.url {
-            cell.customImageView.setImageWithURL(url)
-        }
-    }
+         }
     
     
     
@@ -235,15 +257,24 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func setTitleForCell(cell:NewsCell, indexPath:NSIndexPath) {
-        let item = items[indexPath.row] as RSSItem
+       // let item = items[indexPath.row] as RSSItem
+       let newsArticle = items[indexPath.row]
+        
         // print("The item is : \(item.title)")
-        cell.titleLabel.text = item.title ?? "[No Title]"
+       // cell.titleLabel.text = item.title ?? "[No Title]"
+        cell.titleLabel.text = newsArticle.valueForKey("title") as? String ?? "[No Title]"
     }
     
     func setSubtitleForCell(cell:NewsCell, indexPath:NSIndexPath) {
-        let item = items[indexPath.row] as RSSItem
-        // let subtitle: NSString? = item.mediaText ?? item.mediaDescription
-        let subtitle: NSString? = item.itemDescription
+        //let item = items[indexPath.row] as RSSItem
+        let newsArticle = items[indexPath.row] as NSManagedObject
+        
+        
+        /// let subtitle: NSString? = item.mediaText ?? item.mediaDescription
+     //   let subtitle: NSString? = item.itemDescription
+        let subtitle: NSString? = newsArticle.valueForKey("itemDescription") as? String ?? "[No Title]"
+        
+        
         
         if let subtitle = subtitle {
             
@@ -259,18 +290,12 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.subtitleLabel.text = ""
         }
     }
-    // MARK: UITextFieldDelegate
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        refreshData()
-        return false
-    }
-    
+        
     // MARK: Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath = newsTableView.indexPathForSelectedRow
-        let item = items[indexPath!.row]
+        let item = items[indexPath!.row] as NSManagedObject
         
        let detailViewController = segue.destinationViewController as! DetailViewController
         detailViewController.item = item

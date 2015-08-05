@@ -67,7 +67,11 @@
   if (self = [super init]) {
     _title = [aDecoder decodeObjectForKey:@"title"];
     _link = [aDecoder decodeObjectForKey:@"link"];
-    _itemDescription = [aDecoder decodeObjectForKey:@"itemDescription"];
+   // _itemDescription = [aDecoder decodeObjectForKey:@"itemDescription"];
+      _itemDescription = [aDecoder decodeObjectForKey:@"description"];
+      
+      
+      
     _authorEmail = [aDecoder decodeObjectForKey:@"authorEmail"];
     _commentsURL = [aDecoder decodeObjectForKey:@"commentsURL"];
     _guid = [aDecoder decodeObjectForKey:@"guid"];
@@ -87,7 +91,10 @@
 {
   [aCoder encodeObject:self.title forKey:@"title"];
   [aCoder encodeObject:self.link forKey:@"link"];
-  [aCoder encodeObject:self.itemDescription forKey:@"itemDescription"];
+ // [aCoder encodeObject:self.itemDescription forKey:@"itemDescription"];
+   [aCoder encodeObject:self.itemDescription forKey:@"description"]; 
+    
+    
   [aCoder encodeObject:self.authorEmail forKey:@"authorEmail"];
   [aCoder encodeObject:self.commentsURL forKey:@"commentsLink"];
   [aCoder encodeObject:self.guid forKey:@"guid"];

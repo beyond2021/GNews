@@ -2,15 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:NewsArticle+CoreDataProperties.h">
-   </FileRef>
-   <FileRef
-      location = "group:NewsArticle.h">
-   </FileRef>
-   <FileRef
-      location = "group:NewsArticle.m">
-   </FileRef>
-   <FileRef
       location = "group:GNews.xcodeproj">
    </FileRef>
    <FileRef

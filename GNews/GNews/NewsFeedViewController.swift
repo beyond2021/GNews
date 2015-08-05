@@ -25,8 +25,8 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     //Outlet Actions
     @IBOutlet weak var refreshAction: UIBarButtonItem!
     
-    //MARK: Our simple model array or items
-//    var items:[RSSItem] = []
+    //MARK: Our simple model array or items before coredata
+    //    var items:[RSSItem] = []
     
     //Persistence
     var items = [NSManagedObject]()
@@ -35,7 +35,7 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //Network Call
     func parseForQuery() {
-//        showProgressHUD()
+        //        showProgressHUD()
         
         parser.parseRSSFeed(googleNewsString,
             parameters: parameter ,
@@ -43,14 +43,14 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
                 
                 //  print("The channel is : \(channel)")
                 
-               self.convertItemPropertiesToPlainText(channel.items as! [RSSItem])
-             // self.items = (channel.items as! [RSSItem])
+                self.convertItemPropertiesToPlainText(channel.items as! [RSSItem])
+                // self.items = (channel.items as! [RSSItem])
                 let returnedItems = (channel.items as! [RSSItem])
                 self.persistData(returnedItems)
                 
                 
                 self.hideProgressHUD()
-               self.reloadTableViewContent()
+                self.reloadTableViewContent()
                 
             }, failure: {(let error:NSError!) -> Void in
                 
@@ -58,7 +58,7 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
                 print("Error: \(error)")
         })
     }
-
+    
     
     // MARK : View Life Cycle
     override func viewDidLoad() {
@@ -70,10 +70,10 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     
     //Dynamic row size for the tableView
     func configureTableView() {
-                // TODO: Write this...
+        // TODO: Write this...
         newsTableView.rowHeight = UITableViewAutomaticDimension
         newsTableView.estimatedRowHeight = 160.0
-       
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -89,7 +89,7 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             }
         }
     }
-
+    
     //Refresh the data
     @IBAction func refreshAxtion(sender: AnyObject) {
         parseForQuery()
@@ -99,7 +99,7 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         parseForQuery()
         
     }
-
+    
     func persistData(objectsTosave:[RSSItem]){
         
         let articles = objectsTosave
@@ -123,10 +123,10 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             //3
             news.setValue(article.title, forKey: "title")
             news.setValue(article.itemDescription, forKey: "itemDescription")
-           // news.setValue(article.mediaThumbnails, forKey: "thumbnailImage")
+            // news.setValue(article.mediaThumbnails, forKey: "thumbnailImage")
             
             //4
-                        if managedContext.hasChanges {
+            if managedContext.hasChanges {
                 do {
                     try managedContext.save()
                 } catch {
@@ -137,7 +137,7 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
                     abort()
                 }
             }
-                        //5
+            //5
             self.items.append(news)
             
         }
@@ -197,12 +197,8 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-             return items.count
+        return items.count
     }
-    
-    //    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    //        return basicCellAtIndexPath(indexPath)
-    //    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if hasImageAtIndexPath(indexPath) {
@@ -214,9 +210,8 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func hasImageAtIndexPath(indexPath:NSIndexPath) -> Bool {
-       // let item = items[indexPath.row]
-        
-        
+        // let item = items[indexPath.row]
+        //TODO
         return false
     }
     
@@ -229,7 +224,8 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func setImageForCell(cell:ImageCell, indexPath:NSIndexPath) {
-         }
+        //TODO
+    }
     
     
     
@@ -237,14 +233,9 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func basicCellAtIndexPath(indexPath:NSIndexPath) -> NewsCell {
         var cell = newsTableView.dequeueReusableCellWithIdentifier(newsCellIdentifier) as? NewsCell
-        
-        
-        
         if cell == nil {
             cell = NewsCell(style: UITableViewCellStyle.Value1, reuseIdentifier: newsCellIdentifier)
-            //cell = tableView.dequeueReusableCellWithIdentifier(basicCellIdentifier) as? BasicCell
         }
-        
         setTitleForCell(cell!, indexPath: indexPath)
         setSubtitleForCell(cell!, indexPath: indexPath)
         return cell!
@@ -257,11 +248,7 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func setTitleForCell(cell:NewsCell, indexPath:NSIndexPath) {
-       // let item = items[indexPath.row] as RSSItem
-       let newsArticle = items[indexPath.row]
-        
-        // print("The item is : \(item.title)")
-       // cell.titleLabel.text = item.title ?? "[No Title]"
+        let newsArticle = items[indexPath.row]
         cell.titleLabel.text = newsArticle.valueForKey("title") as? String ?? "[No Title]"
     }
     
@@ -271,13 +258,9 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         
         
         /// let subtitle: NSString? = item.mediaText ?? item.mediaDescription
-     //   let subtitle: NSString? = item.itemDescription
+        //   let subtitle: NSString? = item.itemDescription
         let subtitle: NSString? = newsArticle.valueForKey("itemDescription") as? String ?? "[No Title]"
-        
-        
-        
         if let subtitle = subtitle {
-            
             // Some subtitles are really long, so only display the first 200 characters
             if subtitle.length > 200 {
                 cell.subtitleLabel.text = "\(subtitle.substringToIndex(200))..."
@@ -290,14 +273,14 @@ class NewsFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.subtitleLabel.text = ""
         }
     }
-        
+    
     // MARK: Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath = newsTableView.indexPathForSelectedRow
         let item = items[indexPath!.row] as NSManagedObject
         
-       let detailViewController = segue.destinationViewController as! DetailViewController
+        let detailViewController = segue.destinationViewController as! DetailViewController
         detailViewController.item = item
     }
     
